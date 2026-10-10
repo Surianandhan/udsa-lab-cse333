@@ -4,7 +4,7 @@ This repository contains Usability Design of Software Applications (UDSA) lab pr
 
 ## Overview
 
-The programs demonstrate Android user interface design and interaction, including XML layouts, event handling, menus and lists, input forms, navigation between activities using Intents, and local data storage with SQLite.
+The programs demonstrate Android user interface design and interaction, including XML layouts, event handling, menus and lists, input forms, navigation between activities using Intents, fragments, and local data storage with SQLite.
 
 ## Topics Covered
 
@@ -32,6 +32,10 @@ The programs demonstrate Android user interface design and interaction, includin
 - Passing data with putExtra() / getStringExtra()
 - Sending SMS through the default messaging app (ACTION_SENDTO)
 
+### Fragments
+- Switching between two fragments inside one activity
+- FragmentManager transactions with replace() and commit()
+
 ### Database
 - SQLite employee management (Add, View, Modify, Delete, View All)
 
@@ -50,7 +54,8 @@ udsa-lab-cse333/
 │   ├── 07_BankAccountRegistration/
 │   ├── 08_UserInputForm/
 │   ├── 09_IntentDataPassing/
-│   └── 10_SendSMS/
+│   ├── 10_SendSMS/
+│   └── 11_Fragments/
 │
 └── README.md
 ```
@@ -65,6 +70,7 @@ Each folder contains the layout file(s) (`.xml`) and activity file(s) (`.java`) 
    - Layout `.xml` files → `app/src/main/res/layout/`
    - `mymenu.xml` (Experiment 05) → `app/src/main/res/menu/`
    - `AndroidManifest.xml` (Experiment 09) → `app/src/main/` (or add the `SecondActivity` entry to your existing manifest)
+   - `build.gradle` (Experiment 11) → compare with `app/build.gradle` and make sure the `dependencies` block includes `androidx.appcompat`
 3. Change the `package` line at the top of each `.java` file to match your project's package name.
 4. Build and run on an emulator or Android device.
 
@@ -74,7 +80,7 @@ Each folder contains the layout file(s) (`.xml`) and activity file(s) (`.java`) 
 
 - Understand Android UI design using XML layouts
 - Handle user interaction through events and listeners
-- Build multi-screen applications using Intents
+- Build multi-screen applications using Intents and Fragments
 - Practice form design, validation and data storage
 
 ## Notes
@@ -85,6 +91,7 @@ The code was extracted from the lab records and corrected so it builds on curren
 - Experiment 05: `switch` on menu IDs replaced with `if-else` (resource IDs are not constants in AGP 8+)
 - Experiment 06: SQL queries use `?` placeholders, so input containing quotes no longer crashes the app, and cursors are closed
 - Experiment 09: `AndroidManifest.xml` added to register `SecondActivity`
+- Experiment 11: `dependencies` block added to `build.gradle`, and the first fragment is only loaded on first launch so rotating the screen keeps the current fragment
 
 ## Future Improvements
 
